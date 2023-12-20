@@ -21,9 +21,9 @@ public class Entrenador {
 	private String email;
 	private String nombre;
 	private String apellido;
-	private Date fechaNacimiento;
-	private Date fechaVinculacion;
-	private Pueblo puebloId;
+	private String fechaNacimiento;
+	private String fechaVinculacion;
+	private int puebloId;
 	private String uuid;
 	
 	@OneToMany(mappedBy = "entrenador")

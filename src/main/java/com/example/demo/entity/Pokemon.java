@@ -21,9 +21,9 @@ public class Pokemon {
 	
 	private String nombre;
 	
-	private Tipo_pokemon tipoPokemon;
+	private int tipoPokemon;
 	
-	private Date fechaDescubrimiento;
+	private String fechaDescubrimiento;
 	
 	private int generacion;
 	
