@@ -1,9 +1,14 @@
 package com.example.demo.repository;
 
+import java.util.Optional;
+
 import org.springframework.data.jpa.repository.JpaRepository;
 
-import com.example.demo.entity.Tipo_pokemon;
+import com.example.demo.entity.TipoPokemon;
 
-public interface TipoPokemonRepo extends JpaRepository<Tipo_pokemon, Integer> {
 
+public interface TipoPokemonRepo extends JpaRepository<TipoPokemon, Integer> {
+
+	
+	public Optional<TipoPokemon> findByUuid(String uuid);
 }
