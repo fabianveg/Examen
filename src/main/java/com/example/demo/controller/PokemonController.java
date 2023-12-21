@@ -11,10 +11,13 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.entity.Entrenador;
 import com.example.demo.entity.Pokemon;
 import com.example.demo.entity.TipoPokemon;
 import com.example.demo.repository.PokemonRepo;
 import com.example.demo.repository.TipoPokemonRepo;
+import com.example.demo.util.Views;
+import com.fasterxml.jackson.annotation.JsonView;
 
 @RestController
 @RequestMapping("/pokemons")
@@ -48,6 +51,18 @@ public class PokemonController {
 		
 		repo.save(pokemon);
 		return pokemon;
+	}
+	
+	@GetMapping("/listar")
+	public List<Pokemon> listar(){
+		return repo.findAll();
+	}
+	
+
+	@GetMapping("/{uuid}/entrenadores")
+	public List<Entrenador> listarEntrenadores(@PathVariable String uuid){
+		
+		return repo.findByUuid(uuid).get().getEntrenadores();
 	}
 	
 	
